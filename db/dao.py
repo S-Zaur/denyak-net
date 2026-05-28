@@ -64,7 +64,7 @@ class UserDAO(BaseDAO[User]):
         timezone: Optional[str] = None,
         notification_time: Optional[time] = None,
     ):
-        query = select(UserSetting).where(User.id == tg_id)
+        query = select(UserSetting).where(UserSetting.user_id == tg_id)
         result = await self.session.execute(query)
         setting = result.scalar_one_or_none()
 

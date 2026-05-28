@@ -1,3 +1,5 @@
 python-dotenv
 sqlalchemy
 alembic
+aiogram>=3.15.0
+timezonefinder

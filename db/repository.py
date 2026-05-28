@@ -6,5 +6,8 @@ class Repository:
         self.session = session
         self.user = dao.UserDAO(session)
         self.location = dao.AccountDAO(session)
-        self.setting = dao.CategoryDAO(session)
+        self.category = dao.CategoryDAO(session)
         self.transaction = dao.TransactionDAO(session)
+
+    async def commit(self):
+        await self.session.commit()
